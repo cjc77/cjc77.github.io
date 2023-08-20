@@ -1,0 +1,94 @@
+.header {
+    padding: 20px;
+    text-align: center;
+    background: #0077b5; /* LinkedIn blue color */
+    color: white;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin: 5px 0;
+}
+
+.header p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.content {
+    margin: 40px;
+}
+
+.content a {
+    color: #0077b5; /* LinkedIn blue color */
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+.toc-list {
+    margin-left: 30px; /* Indentation for the content */
+}
+
+.toc-link {
+    color: #0077b5; /* LinkedIn blue color */
+    font-size: 18px;
+    display: block;
+    margin: 15px 0;
+    position: relative;
+    padding-left: 30px; /* Space for the arrow icon */
+}
+
+.toc-link:before {
+    /* content: "→"; */
+    content: "\f061"; /* Font Awesome right arrow icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0a9";
+    width: 20px; /* Width of the hanging indent */
+    height: 100%;
+    position: absolute;
+    left: 0px; /* Position of the hanging indent */
+    color: #0077b5; /* LinkedIn blue color */
+}
+
+.toc-link:hover {
+    text-decoration: underline;
+}
+
+.in-progress {
+    font-style: italic; /* Optional: italicize the text */
+    color: #888;       /* Optional: set a subtle color */
+}
+
+.breadcrumb {
+    font-size: 14px; /* Adjust the font size */
+    color: #666;    /* Set the text color */
+}
+
+.breadcrumb a {
+    text-decoration: none; /* Remove underline from the link */
+    color: #0077b5;        /* Set the link color */
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.bio-section {
+    background-color: #f9f9f9; /* Light background color */
+    padding: 20px;             /* Padding for spacing */
+    margin: 20px 0;            /* Margin for spacing */
+    /* border-radius: 10px;       Rounded corners */
+}
+
+.bio-section h3 {
+    color: #333;               /* Color for the heading */
+    margin-bottom: 10px;       /* Space below the heading */
+}
+
+.bio-section p {
+    line-height: 1.6;          /* Line spacing for readability */
+    color: #555;               /* Text color */
+}
