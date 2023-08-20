@@ -84,8 +84,11 @@
 .bio-section {
     background-color: #f9f9f9; /* Light background color */
     padding: 20px;             /* Padding for spacing */
-    margin: 20px 0;            /* Margin for spacing */
+    /* margin: 20px 0;            Margin for spacing */
     /* border-radius: 10px;       Rounded corners */
+    margin: 20px 50px 20px 50px; /* Margin for spacing, with left margin */
+    max-width: 1200px;          /* Maximum width to prevent continuous expansion */
+    border-radius: 10px;       /* Slightly rounded corners */
 }
 
 .bio-section h3 {
