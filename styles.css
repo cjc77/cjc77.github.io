@@ -28,16 +28,21 @@
 }
 
 .toc-list {
-    margin-left: 30px; /* Indentation for the content */
+    margin-left: 0px; /* Indentation for the content */
+}
+
+.toc-item {
+    position: relative;
+    padding-left: 50px; /* Space for the arrow icon */
 }
 
 .toc-link {
     color: #0077b5; /* LinkedIn blue color */
     font-size: 18px;
-    display: block;
+    /* display: block; */
     margin: 15px 0;
-    position: relative;
-    padding-left: 30px; /* Space for the arrow icon */
+    /* position: relative; */
+    /* padding-left: 30px; Space for the arrow icon */
 }
 
 .toc-link:before {
@@ -92,3 +97,11 @@
     line-height: 1.6;          /* Line spacing for readability */
     color: #555;               /* Text color */
 }
+
+h2 {
+    padding-left: 20px;
+    font-size: 24px; /* Adjust the font size as needed */
+    margin: 20px 0;  /* Margin for spacing */
+    color: #333;    /* Color for the heading */
+}
+
