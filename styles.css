@@ -32,9 +32,10 @@
 }
 
 .toc-item {
-    /* position: relative; */
+    position: relative;
     padding-left: 10px; /* Space for the arrow icon */
-    align-items: center;  /* Vertically align children */
+    align-items: center; /* Vertically align children */
+    /* line-height: 1.5; */
 }
 
 .toc-item:before {
@@ -59,12 +60,6 @@
     margin: 15px 0;
     /* position: relative; */
     padding-left: 20px; /* Space for the arrow icon */
-}
-
-.toc-title {
-    font-size: 18px;
-    padding-left: 20px;
-    font-weight: bold;
 }
 
 .toc-link:hover {
@@ -93,9 +88,8 @@
 .bio-section {
     background-color: #f9f9f9; /* Light background color */
     padding: 20px;             /* Padding for spacing */
-    /* margin: 20px 0;            Margin for spacing */
+    margin: 20px 40px 0px 40px;           /* Margin for spacing */
     /* border-radius: 10px;       Rounded corners */
-    margin: 20px 0; /* Margin for spacing, with left margin */
     max-width: 1200px;          /* Maximum width to prevent continuous expansion */
     border-radius: 10px;       /* Slightly rounded corners */
 }
@@ -114,7 +108,7 @@
     background-color: #f9f9f9; /* Light background color */
     padding: 20px;             /* Padding for spacing */
     /* margin: 20px 0;            Margin for spacing */
-    margin: 10px 0px 10px 0px; /* Margin for spacing, with left margin */
+    margin: 0px 40px 0px 40px; /* Margin for spacing, with left margin */
     max-width: 1200px;          /* Maximum width to prevent continuous expansion */
     border-radius: 10px;       /* Slightly rounded corners */
 }
