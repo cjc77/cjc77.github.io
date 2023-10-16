@@ -7453,7 +7453,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Initial-dataset-preparation">Initial dataset preparation<a class="anchor-link" href="#Initial-dataset-preparation">¶</a></h1><p>In this notebook, we will take a look at preparation of our root dataset. To view the next notebook in the sequence, use the navigation link above, or at the bottom of this notebook.</p>
+<h1 id="Initial-Dataset-Preparation">Initial Dataset Preparation<a class="anchor-link" href="#Initial-Dataset-Preparation">¶</a></h1><p>In this notebook, we will take a look at preparation of our root dataset. To view the next notebook in the sequence, use the navigation link above, or at the bottom of this notebook.</p>
 </div>
 </div>
 </div>
@@ -7465,7 +7465,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>First, let's import the libraries that will be required for this notebook.</p>
-<p>Note that <code>myutilpy</code> is a custom package that has been created for this repo. It contains code that will be helpful for this sequence of notebooks. In this notebook, we import the <code>myutilpy.data_processing</code> module as <code>dprep</code> and utilize its utility functions.</p>
+<p>Note that <code>myutilpy</code> is a custom package that has been created for this repo. It contains code that will be helpful for this sequence of notebooks. In this notebook, we import the <code>myutilpy.data_processing</code> module as <code>dprep</code> and utilize its utility functions. All of the source code is available in this repository.</p>
 </div>
 </div>
 </div>
@@ -7557,6 +7557,7 @@ a.anchor-link {
 <span class="n">pt_model_checkpoint</span> <span class="o">=</span> <span class="n">main_config</span><span class="p">[</span><span class="s2">"pt_model_checkpoint"</span><span class="p">]</span>
 <span class="n">pt_model_checkpoint_revision</span> <span class="o">=</span> <span class="n">main_config</span><span class="p">[</span><span class="s2">"pt_model_checkpoint_revision"</span><span class="p">]</span>
 <span class="n">dataset_id</span> <span class="o">=</span> <span class="n">main_config</span><span class="p">[</span><span class="s2">"dataset_id"</span><span class="p">]</span>
+<span class="n">data_seed</span> <span class="o">=</span> <span class="n">main_config</span><span class="p">[</span><span class="s2">"data_seed"</span><span class="p">]</span>
 
 <span class="n">root_dataset_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"../data/pitchfork/</span><span class="si">{</span><span class="n">dataset_id</span><span class="si">}</span><span class="s2">"</span>
 <span class="n">raw_data_cache_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"../data/pitchfork/raw/cache"</span>
@@ -7574,7 +7575,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Tokenizer-and-Dataset-loading">Tokenizer and Dataset loading<a class="anchor-link" href="#Tokenizer-and-Dataset-loading">¶</a></h2><p>Now, we will load the tokenizer associated with our model of choice.</p>
+<h2 id="Tokenizer-and-dataset-loading">Tokenizer and dataset loading<a class="anchor-link" href="#Tokenizer-and-dataset-loading">¶</a></h2><p>Now, we will load the tokenizer associated with our model of choice.</p>
 </div>
 </div>
 </div>
@@ -7606,7 +7607,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0d287c54-85f8-42d9-bbb1-05a8c4d1c634">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=0d287c54-85f8-42d9-bbb1-05a8c4d1c634">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7622,30 +7623,6 @@ a.anchor-link {
     <span class="n">cache_dir</span><span class="o">=</span><span class="n">raw_data_cache_dir</span>
 <span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Downloading data files:   0%|          | 0/1 [00:00&lt;?, ?it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Extracting data files:   0%|          | 0/1 [00:00&lt;?, ?it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Generating train split: 0 examples [00:00, ? examples/s]</pre>
 </div>
 </div>
 </div>
@@ -7738,7 +7715,7 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># The artist, album, review, and reviewer columns should be strings (e.g., should not be None)</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
-    <span class="k">lambda</span> <span class="n">examples</span><span class="p">:</span> <span class="n">dprep</span><span class="o">.</span><span class="n">detect_wrong_type</span><span class="p">(</span><span class="n">examples</span><span class="p">,</span> <span class="p">[</span><span class="s2">"artist"</span><span class="p">,</span> <span class="s2">"album"</span><span class="p">,</span> <span class="s2">"review"</span><span class="p">,</span> <span class="s2">"reviewer"</span><span class="p">],</span> <span class="nb">str</span><span class="p">),</span>
+    <span class="k">lambda</span> <span class="n">examples</span><span class="p">:</span> <span class="n">dprep</span><span class="o">.</span><span class="n">detect_wrong_type_batched</span><span class="p">(</span><span class="n">examples</span><span class="p">,</span> <span class="p">[</span><span class="s2">"artist"</span><span class="p">,</span> <span class="s2">"album"</span><span class="p">,</span> <span class="s2">"review"</span><span class="p">,</span> <span class="s2">"reviewer"</span><span class="p">],</span> <span class="nb">str</span><span class="p">),</span>
     <span class="n">batched</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">num_proc</span><span class="o">=</span><span class="n">num_cores_avail</span>
 <span class="p">)</span>
@@ -7953,19 +7930,19 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
 <pre>Token indices sequence length is longer than the specified maximum sequence length for this model (721 &gt; 512). Running this sequence through the model will result in indexing errors
-Token indices sequence length is longer than the specified maximum sequence length for this model (660 &gt; 512). Running this sequence through the model will result in indexing errors
+Token indices sequence length is longer than the specified maximum sequence length for this model (560 &gt; 512). Running this sequence through the model will result in indexing errors
 Token indices sequence length is longer than the specified maximum sequence length for this model (664 &gt; 512). Running this sequence through the model will result in indexing errors
+Token indices sequence length is longer than the specified maximum sequence length for this model (660 &gt; 512). Running this sequence through the model will result in indexing errors
 Token indices sequence length is longer than the specified maximum sequence length for this model (924 &gt; 512). Running this sequence through the model will result in indexing errors
 Token indices sequence length is longer than the specified maximum sequence length for this model (670 &gt; 512). Running this sequence through the model will result in indexing errors
-Token indices sequence length is longer than the specified maximum sequence length for this model (586 &gt; 512). Running this sequence through the model will result in indexing errors
-Token indices sequence length is longer than the specified maximum sequence length for this model (572 &gt; 512). Running this sequence through the model will result in indexing errors
-Token indices sequence length is longer than the specified maximum sequence length for this model (560 &gt; 512). Running this sequence through the model will result in indexing errors
-Token indices sequence length is longer than the specified maximum sequence length for this model (562 &gt; 512). Running this sequence through the model will result in indexing errors
-Token indices sequence length is longer than the specified maximum sequence length for this model (852 &gt; 512). Running this sequence through the model will result in indexing errors
 Token indices sequence length is longer than the specified maximum sequence length for this model (727 &gt; 512). Running this sequence through the model will result in indexing errors
-Token indices sequence length is longer than the specified maximum sequence length for this model (902 &gt; 512). Running this sequence through the model will result in indexing errors
-Token indices sequence length is longer than the specified maximum sequence length for this model (568 &gt; 512). Running this sequence through the model will result in indexing errors
+Token indices sequence length is longer than the specified maximum sequence length for this model (572 &gt; 512). Running this sequence through the model will result in indexing errors
+Token indices sequence length is longer than the specified maximum sequence length for this model (852 &gt; 512). Running this sequence through the model will result in indexing errors
 Token indices sequence length is longer than the specified maximum sequence length for this model (623 &gt; 512). Running this sequence through the model will result in indexing errors
+Token indices sequence length is longer than the specified maximum sequence length for this model (568 &gt; 512). Running this sequence through the model will result in indexing errors
+Token indices sequence length is longer than the specified maximum sequence length for this model (586 &gt; 512). Running this sequence through the model will result in indexing errors
+Token indices sequence length is longer than the specified maximum sequence length for this model (902 &gt; 512). Running this sequence through the model will result in indexing errors
+Token indices sequence length is longer than the specified maximum sequence length for this model (562 &gt; 512). Running this sequence through the model will result in indexing errors
 Token indices sequence length is longer than the specified maximum sequence length for this model (791 &gt; 512). Running this sequence through the model will result in indexing errors
 </pre>
 </div>
@@ -8080,7 +8057,7 @@ Token indices sequence length is longer than the specified maximum sequence leng
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>绿 emphatic¸ ƚI うたのきしゃ 曜 冥 九 只 ⌘ 剣 指 ¯ 廁 隠 來 ゾット 者 ዘላለም 佛 卡 先 浴 念 轉 印 兰 鬼 苑 狗 박혜진 17℃ 市 d​ᴉ​lɟ ؟ 呼 燕 ◕ 與 靈 观 重 乱 殺 吸 共 💯 옛날이야기 縞 ❀ 10℃ 物 戰 駭 개꿈 節 波 客 會 茶 想 14℃ 象 ♑ 所 界 □ 音 去 奏 希 敗 怕 霊 ⌘v 矮 0℃ YTI⅃AƎЯ 惊 夢 ˂stranger˃ 愚 蛰 ☽ ɪᴍᴘᴀᴄᴛ21 ♈ 36℃ ƨbnƎ 観 Ⓡ 疊 過 ✓ 縦 玉 閃 制 ｡ 偉 ‽ 害 詩 幽 七 ☕ 蒸 傍
+<pre>者 emphatic¸ ⌘v 先 燕 音 會 客 重 Ⓡ 戰 ✓ 14℃ 愚 蒸 與 奏 蛰 ¯ ♈ ｡ 绿 ♑ 制 念 0℃ 卡 鬼 象 剣 ‽ 兰 市 矮 옛날이야기 ዘላለም 疊 ❀ 冥 敗 ؟ ◕ 閃 ☽ 來 九 希 ゾット ˂stranger˃ 廁 ☕ 36℃ 詩 玉 惊 17℃ 想 霊 ɪᴍᴘᴀᴄᴛ21 隠 浴 去 靈 幽 박혜진 曜 苑 YTI⅃AƎЯ d​ᴉ​lɟ 10℃ うたのきしゃ 物 傍 乱 偉 印 観 观 殺 所 指 夢 波 呼 縦 界 □ 개꿈 節 狗 共 怕 轉 七 縞 過 💯 ƚI 駭 只 ƨbnƎ 佛 害 茶 吸 ⌘
 </pre>
 </div>
 </div>
@@ -8254,12 +8231,12 @@ Token indices sequence length is longer than the specified maximum sequence leng
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># First, split the dataset into "train" and "test" where "test" will be used to</span>
 <span class="c1"># build the true "validation" and "test" splits</span>
-<span class="n">datasets</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">datasets</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">data_seed</span><span class="p">)</span>
 
 <span class="c1"># Now, split the temp dataset into validation and test sets</span>
 <span class="n">datasets_val_test</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"test"</span><span class="p">)</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
