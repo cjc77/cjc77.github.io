@@ -32,8 +32,24 @@
 }
 
 .toc-item {
+    /* position: relative; */
+    padding-left: 10px; /* Space for the arrow icon */
+    align-items: center;  /* Vertically align children */
+}
+
+.toc-item:before {
+    /* content: "→"; */
+    content: "\f061"; /* Font Awesome right arrow icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0a9";
+    width: 20px; /* Width of the hanging indent */
+    /* height: 100%; */
+    /* position: absolute; */
     position: relative;
-    padding-left: 50px; /* Space for the arrow icon */
+    /* display: flex; */
+    left: 0px; /* Position of the hanging indent */
+    color: #0077b5; /* LinkedIn blue color */
 }
 
 .toc-link {
@@ -42,20 +58,13 @@
     /* display: block; */
     margin: 15px 0;
     /* position: relative; */
-    /* padding-left: 30px; Space for the arrow icon */
+    padding-left: 20px; /* Space for the arrow icon */
 }
 
-.toc-link:before {
-    /* content: "→"; */
-    content: "\f061"; /* Font Awesome right arrow icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f0a9";
-    width: 20px; /* Width of the hanging indent */
-    height: 100%;
-    position: absolute;
-    left: 0px; /* Position of the hanging indent */
-    color: #0077b5; /* LinkedIn blue color */
+.toc-title {
+    font-size: 18px;
+    padding-left: 20px;
+    font-weight: bold;
 }
 
 .toc-link:hover {
@@ -86,7 +95,7 @@
     padding: 20px;             /* Padding for spacing */
     /* margin: 20px 0;            Margin for spacing */
     /* border-radius: 10px;       Rounded corners */
-    margin: 20px 50px 20px 50px; /* Margin for spacing, with left margin */
+    margin: 20px 0; /* Margin for spacing, with left margin */
     max-width: 1200px;          /* Maximum width to prevent continuous expansion */
     border-radius: 10px;       /* Slightly rounded corners */
 }
@@ -100,6 +109,23 @@
     line-height: 1.6;          /* Line spacing for readability */
     color: #555;               /* Text color */
 }
+
+.proj-description {
+    background-color: #f9f9f9; /* Light background color */
+    padding: 20px;             /* Padding for spacing */
+    /* margin: 20px 0;            Margin for spacing */
+    margin: 10px 0px 10px 0px; /* Margin for spacing, with left margin */
+    max-width: 1200px;          /* Maximum width to prevent continuous expansion */
+    border-radius: 10px;       /* Slightly rounded corners */
+}
+
+.proj-description-title {
+    color: #333;               /* Color for the heading */
+    font-size: 24px;
+    margin-bottom: 10px;
+    vertical-align: top;
+}
+
 
 h2 {
     padding-left: 20px;
