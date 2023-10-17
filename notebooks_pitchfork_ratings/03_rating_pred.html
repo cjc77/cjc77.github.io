@@ -7454,6 +7454,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Model-Fitting">Model Fitting<a class="anchor-link" href="#Model-Fitting">¶</a></h1><p>In this notebook, we will perform model fitting and collect metrics for evaluating the performance of our fitted model.</p>
+<p>We are fine-tuning a <a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"><code>MiniLM-L6</code></a> model. This model generates embeddings that capture information about passages of text, and can be used for various NLP tasks. This model is much lighter-weight (i.e., has fewer parameters) than other transformer models well-suited to the same task, but still delivers good quality performance. A helpful comparison of model architecture performance can be found <a href="https://www.sbert.net/docs/pretrained_models.html">here</a>. This comparison was created by the authors of this (and several other) models uploaded to the <a href="https://huggingface.co/">Hugging Face</a> model repository.</p>
 </div>
 </div>
 </div>
@@ -7533,8 +7534,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Configurations">Configurations<a class="anchor-link" href="#Configurations">¶</a></h2><p>Next, let’s do some setup. We will load the associated configurations for the desired experiment.</p>
-<p>We are fine-tuning a <a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"><code>MiniLM-L6</code></a> model. This model generates embeddings that capture information about passages of text, and can be used for various NLP tasks. This model is much lighter-weight (i.e., has fewer parameters) than other transformer models well-suited to the same task, but still delivers good quality performance. A helpful comparison of model architecture performance can be found <a href="https://www.sbert.net/docs/pretrained_models.html">here</a>. This comparison was created by the authors of this (and several other) models uploaded to the <a href="https://huggingface.co/">Hugging Face</a> model repository.</p>
+<h2 id="Configurations">Configurations<a class="anchor-link" href="#Configurations">¶</a></h2><p>Next, let’s do some setup. We will load the associated configurations for the desired experimenory.</p>
 </div>
 </div>
 </div>
@@ -7634,7 +7634,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Tokenization">Tokenization<a class="anchor-link" href="#Tokenization">¶</a></h3><p>We only need a subset of the dataset columns for our model-fitting. Our tokenizer will output the <code>"input_ids"</code> and <code>"attention_mask"</code> columns. Strictly speaking, we only really need the <code>"input_ids"</code>, <code>"attention_mask"</code>, and <code>"rating"</code> columns, but keeping additional columns can be helpful for debugging and development purposes.</p>
+<h3 id="Tokenization">Tokenization<a class="anchor-link" href="#Tokenization">¶</a></h3><p>We only need a subset of the dataset columns for our model-fitting. Our tokenizer will output the <code>"input_ids"</code> and <code>"attention_mask"</code> columns. Strictly speaking, we only really need the <code>"input_ids"</code>, <code>"attention_mask"</code>, and <code>"rating"</code> columns, but keeping additional columns can be helpful for debugging and development purposes when performance is not a key concern.</p>
 </div>
 </div>
 </div>
@@ -7856,12 +7856,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Setup-for-fitting">Setup for fitting<a class="anchor-link" href="#Setup-for-fitting">¶</a></h2><p>Now, let's prepare to fit our model. Notice that we have two epoch variables. When fine-tuning pre-trained models, it is common practice to</p>
-<ol>
-<li>freeze the weights of the base model and train only the task-specific model head for a round of training, then</li>
-<li>select the best-performing parameters the "frozen" roundround of training, un-freeze the base model parameters, and do a second round of training of all model parame A relatively small learning rate is usually used for this stage.ters.</li>
-</ol>
-<p>Here, we will perform very few epochs of training in both stages for a couple of reasons. First, this code is not being executed in a cloud environment with large amounts of compute, so we will try and keep things manageable. Second, given the dataset size and the relatively small number of parameters in the regression model head, the first step likely does not need all that many epochs to obtain good performance. Finally, when fine-tuning the model, it is often the case that overfitting will occur within just a few epochs due to how powerful the base model will typically be.</p>
+<h2 id="Setup-for-fitting">Setup for fitting<a class="anchor-link" href="#Setup-for-fitting">¶</a></h2><p>Now, let's prepare to fit our model. Notice that we have two epoch variablesWe are fine-tuning a pre-trained model and will follow the common pattern of freezing the base model's parameters and training the new model head, then un-freezing the base model's parameters and training the full model with a low learning rate.ters.</p>
+<p>Here, we will prelatively fewery few epochs of training in both stages for a couple of reasons. First, this code is not being executed in a cloud environment with large amounts of compute, so we will try and keep things manageable. Second, given the dataset size and the relatively small number of parameters in the regression model head, the first step likely does not need all that many epochs to obtain good performance. Finally, when fine-tuning the model, it is often the case that overfitting will occur within just a few epochs due to how powerful the base model will typically be.</p>
 </div>
 </div>
 </div>
@@ -7899,7 +7895,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Let's also set a random seed for model fitting so that we can reproduce our results if need be.</p>
+<p>Let's also set a random seed for model fitting so that we can reproduce our results.</p>
 </div>
 </div>
 </div>
@@ -7965,7 +7961,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The first thing we will take care of for setting up the trainer is to define our logging and checkpointing utilities. We will log metrics to both a <code>.csv</code> file and for <code>tensorboard</code> visualization. While the tensorboard output will not appear in this notebook's output, it is a very convenient tool for examining model behavior during fitting and for comparing fitting behavior across models or versions of the same model. The <code>tensorboard</code> output was used during development of these notebooks and the code to utilize it is retained for those who are interested in replicating the results. We also want to make sure we retain checkpoints of our model so that we can load them in later. Here, we decide to keep only the checkpoint whose model parameters yielded the minimum validation loss out of all training epochs. Notice that we specify this checkpointer is only for the "frozen" training epochs.</p>
+<p>The first thing we will take care of for setting up the trainer is to define our logging and checkpointing utilities. We will log metrics to both a <code>.csv</code> file and for <code>tensorboard</code> visualization. While the tensorboard output will not appear in this notebook's output, it is a very convenient tool for examining model behavior during fitting, and was used during the development of this notebook. We also want to make sure we retain checkpoints of our model so that we can load them in later. Here, we decide to keep only the checkpoint whose model parameters yielded the minimum validation loss out of all training epochs (i.e., the "best" version of the frozen model). Notice that we specify this checkpointer is only for the "frozen" training epochs.</p>
 </div>
 </div>
 </div>
@@ -8003,7 +7999,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Our next step is to instantiate our frozen <code>Trainer</code> object. Notice that we also make a (potential) modification to the number of frozen training epochs. The reason for this is that a saved checkpoint will contain the epoch at which the checkpoint was written out. Since this notebook was already run (behind the scenes, like a cooking show where all of the ingredients are always magically prepped!) and the best version of the frozen model was already saved out, we don't want to start training where we left off if it just so happens that the best version of the model was found before the final epoch. This would be the case if, since we only saved the best model version in terms of validation loss, overfitting began to occur. So, we update our <code>max_epochs</code> to reflect the number of epochs it took to find the best frozen model (behind the scenes) and this means the trainer will not attempt to run additional fitting epochs.</p>
+<p>Our next step is to instantiate our frozen <code>Trainer</code> object. Notice that we also make a (potential) modification to the number of frozen training epochs. The reason for this is that a saved checkpoint will contain the epoch at which the checkpoint was written out. Since this notebook was already run (behind the scenes, like a cooking show where all of the ingredients are always magically prepped!) and the best version of the frozen model was already saved out, we don't want to start training where we left off if the best version of the model was found before the final epoch. This would be the case if overfitting began to occur before the final epoch. So, we update our <code>max_epochs</code> to reflect the number of epochs it took to find the best frozen model (behind the scenes) and this means the trainer will not attempt to run additional fitting epochs.</p>
 </div>
 </div>
 </div>
@@ -8050,14 +8046,14 @@ HPU available: False, using: 0 HPUs
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a53e6ba1-dbb7-4424-b338-bdbbd681964c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ecdd1cf7-40e7-4c78-bd40-42d3bb5bb59f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Model">Model<a class="anchor-link" href="#Model">¶</a></h3><p>Let's now instantiate our full model (base model + regression head) using the <code>TextRegressor</code> class defined in `myutilpy.models.text_regressor</p>
-<p>Note that the pooling method we use for this experiment is "CLS pooling" (pooling by extracting the starting <code>[CLS]</code>) token. This is a popular method when using BERT-based models.`.</p>
+<h3 id="Model">Model<a class="anchor-link" href="#Model">¶</a></h3><p>Let's now instantiate our full model (base model + regression head) using the <code>TextRegressor</code> class defined in <code>myutilpy.models.text_regressor</code>.</p>
+<p>Note that the pooling method we use for this experiment is "CLS pooling" (pooling by extracting the starting <code>"[CLS]"</code>) token. This is a popular method when using BERT-based models.</p>
 </div>
 </div>
 </div>
@@ -8278,7 +8274,7 @@ HPU available: False, using: 0 HPUs
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Before we move on to the next stage, let's see how well the best version of our frozen model performs on our validation set.</p>
+<h3 id="Validation-data-check">Validation data check<a class="anchor-link" href="#Validation-data-check">¶</a></h3><p>Before we move on to the next stage, let's see how well the best version of our frozen model performs on our validation set.</p>
 </div>
 </div>
 </div>
@@ -8382,7 +8378,7 @@ Loaded model weights from the checkpoint at /home/carcook/dev/nlp-projects/exper
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Pretty good! Using a fully frozen pre-trained base model, we have trained a regression model head to predict ratings to within +/- 1.1 rating "points" based only on review text (on our validation set).</p>
+<p>Pretty good! Using a fully frozen pre-trained base model, we have trained a regression model head to predict ratings to within +/- 1.1 rating "points" on average in our validation set, based only on review text.</p>
 </div>
 </div>
 </div>
@@ -8520,7 +8516,7 @@ Loaded model weights from the checkpoint at /home/carcook/dev/nlp-projects/exper
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>TODO...</p>
+<p>Now, we instantiate our trainer, loggers, and callbacks as in the frozen training section above. Again, we update our maximum epochs argument to be the number of epochs it took to find the best model parameters when the checkpoint was saved out.</p>
 </div>
 </div>
 </div>
@@ -8577,6 +8573,17 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=38c038aa-ea22-45e6-9316-66776245aaa5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Finally, we perform a fine-tuning fit. Again, since a behind-the-scenes fit has already taken place and we are using a checkpoint, no progress bars or current epoch will show up.</p>
 </div>
 </div>
 </div>
@@ -8683,6 +8690,17 @@ LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8fc56a4e-15f6-4c37-9689-a887242a4d7e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Validation-data-check">Validation data check<a class="anchor-link" href="#Validation-data-check">¶</a></h3><p>Let's compare the performance of our fine-tuned model to that of our frozen model on the validation data.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5c3f0d68-b124-4071-865a-641284686587">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8776,6 +8794,28 @@ Loaded model weights from the checkpoint at /home/carcook/dev/nlp-projects/exper
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a4b6add8-dc1d-4aad-b9c8-34fcdf8d5d67">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>It looks like fine-tuning definitely yielded an improvement!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0beafa88-0b1b-40a0-9237-9ee80d8d4f8a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Test-data-check">Test data check<a class="anchor-link" href="#Test-data-check">¶</a></h3><p>To wrap things up, let's take a look at how our fine-tuned model performs on a completely held-out test set. Since we used the validation data to decide which checkpoint to retain for both the frozen and fine-tuning fitting, it is better to use an entirely held-out set of examples to assess estimated model performance.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b24f3b86-4fdb-4074-8437-1505af637a2e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8784,11 +8824,7 @@ Loaded model weights from the checkpoint at /home/carcook/dev/nlp-projects/exper
 <div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Using test set instead of val set since val data were (somewhat)</span>
-<span class="c1"># used for model selection by helping make some design choices (e.g.,</span>
-<span class="c1"># pooling strategy) and in determining when overfitting occurred (e.g.,</span>
-<span class="c1"># deciding when to overwrite checkpoints).</span>
-<span class="n">best_ft_checkpoint_path</span> <span class="o">=</span> <span class="n">finetune_trainer</span><span class="o">.</span><span class="n">checkpoint_callback</span><span class="o">.</span><span class="n">best_model_path</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">best_ft_checkpoint_path</span> <span class="o">=</span> <span class="n">finetune_trainer</span><span class="o">.</span><span class="n">checkpoint_callback</span><span class="o">.</span><span class="n">best_model_path</span>
 <span class="n">finetune_trainer</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">lit_model</span><span class="p">,</span> <span class="n">dataloaders</span><span class="o">=</span><span class="n">test_dataloader</span><span class="p">,</span> <span class="n">ckpt_path</span><span class="o">=</span><span class="n">best_ft_checkpoint_path</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -8870,6 +8906,17 @@ Loaded model weights from the checkpoint at /home/carcook/dev/nlp-projects/exper
 <pre>{'mse': 0.8960342, 'rmse': 0.94659084}
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=85b87fda-b968-48a6-94bb-645d91b49fa1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Still pretty good! While this is slightly higher RMSE than what was achieved on the validation set, it is still rather good when you consider the difficulty of the prediction task and the relative simplicity of the model head.</p>
 </div>
 </div>
 </div>
