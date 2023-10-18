@@ -7479,6 +7479,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">yaml</span>
 <span class="kn">import</span> <span class="nn">multiprocessing</span>
 <span class="kn">import</span> <span class="nn">gc</span>
@@ -8315,10 +8316,30 @@ Loaded model weights from the checkpoint at /home/carcook/dev/nlp-projects/exper
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/home/carcook/dev/nlp-projects/myutilpy/myutilpy/models/text_regressor.py:136: UserWarning: Using a target size 
+(torch.Size([16, 1])) that is different to the input size (torch.Size([16])). This will likely lead to incorrect 
+results due to broadcasting. Please ensure they have the same size.
+  loss = self.criterion(yhat, ratings.unsqueeze(1))
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/home/carcook/dev/nlp-projects/myutilpy/myutilpy/models/text_regressor.py:136: UserWarning: Using a target size 
+(torch.Size([13, 1])) that is different to the input size (torch.Size([13])). This will likely lead to incorrect 
+results due to broadcasting. Please ensure they have the same size.
+  loss = self.criterion(yhat, ratings.unsqueeze(1))
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃<span style="font-weight: bold">        Test metric        </span>┃<span style="font-weight: bold">       DataLoader 0        </span>┃
 ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
-│<span style="color: #008080; text-decoration-color: #008080">       avg_test_loss       </span>│<span style="color: #800080; text-decoration-color: #800080">    1.1630005836486816     </span>│
+│<span style="color: #008080; text-decoration-color: #008080">       avg_test_loss       </span>│<span style="color: #800080; text-decoration-color: #800080">    1.4109914302825928     </span>│
 └───────────────────────────┴───────────────────────────┘
 </pre>
 </div>
@@ -8339,7 +8360,7 @@ Loaded model weights from the checkpoint at /home/carcook/dev/nlp-projects/exper
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[{'avg_test_loss': 1.1630005836486816}]</pre>
+<pre>[{'avg_test_loss': 1.4109914302825928}]</pre>
 </div>
 </div>
 </div>
@@ -8738,10 +8759,30 @@ Loaded model weights from the checkpoint at /home/carcook/dev/nlp-projects/exper
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/home/carcook/dev/nlp-projects/myutilpy/myutilpy/models/text_regressor.py:136: UserWarning: Using a target size 
+(torch.Size([16, 1])) that is different to the input size (torch.Size([16])). This will likely lead to incorrect 
+results due to broadcasting. Please ensure they have the same size.
+  loss = self.criterion(yhat, ratings.unsqueeze(1))
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/home/carcook/dev/nlp-projects/myutilpy/myutilpy/models/text_regressor.py:136: UserWarning: Using a target size 
+(torch.Size([13, 1])) that is different to the input size (torch.Size([13])). This will likely lead to incorrect 
+results due to broadcasting. Please ensure they have the same size.
+  loss = self.criterion(yhat, ratings.unsqueeze(1))
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃<span style="font-weight: bold">        Test metric        </span>┃<span style="font-weight: bold">       DataLoader 0        </span>┃
 ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
-│<span style="color: #008080; text-decoration-color: #008080">       avg_test_loss       </span>│<span style="color: #800080; text-decoration-color: #800080">    0.8175450563430786     </span>│
+│<span style="color: #008080; text-decoration-color: #008080">       avg_test_loss       </span>│<span style="color: #800080; text-decoration-color: #800080">     1.781655192375183     </span>│
 └───────────────────────────┴───────────────────────────┘
 </pre>
 </div>
@@ -8762,7 +8803,7 @@ Loaded model weights from the checkpoint at /home/carcook/dev/nlp-projects/exper
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[{'avg_test_loss': 0.8175450563430786}]</pre>
+<pre>[{'avg_test_loss': 1.781655192375183}]</pre>
 </div>
 </div>
 </div>
@@ -8853,10 +8894,30 @@ Loaded model weights from the checkpoint at /home/carcook/dev/nlp-projects/exper
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/home/carcook/dev/nlp-projects/myutilpy/myutilpy/models/text_regressor.py:136: UserWarning: Using a target size 
+(torch.Size([16, 1])) that is different to the input size (torch.Size([16])). This will likely lead to incorrect 
+results due to broadcasting. Please ensure they have the same size.
+  loss = self.criterion(yhat, ratings.unsqueeze(1))
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/home/carcook/dev/nlp-projects/myutilpy/myutilpy/models/text_regressor.py:136: UserWarning: Using a target size 
+(torch.Size([14, 1])) that is different to the input size (torch.Size([14])). This will likely lead to incorrect 
+results due to broadcasting. Please ensure they have the same size.
+  loss = self.criterion(yhat, ratings.unsqueeze(1))
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃<span style="font-weight: bold">        Test metric        </span>┃<span style="font-weight: bold">       DataLoader 0        </span>┃
 ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
-│<span style="color: #008080; text-decoration-color: #008080">       avg_test_loss       </span>│<span style="color: #800080; text-decoration-color: #800080">    0.8960340619087219     </span>│
+│<span style="color: #008080; text-decoration-color: #008080">       avg_test_loss       </span>│<span style="color: #800080; text-decoration-color: #800080">    1.8949449062347412     </span>│
 └───────────────────────────┴───────────────────────────┘
 </pre>
 </div>
@@ -8877,7 +8938,7 @@ Loaded model weights from the checkpoint at /home/carcook/dev/nlp-projects/exper
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[{'avg_test_loss': 0.8960340619087219}]</pre>
+<pre>[{'avg_test_loss': 1.8949449062347412}]</pre>
 </div>
 </div>
 </div>
@@ -8917,6 +8978,50 @@ Loaded model weights from the checkpoint at /home/carcook/dev/nlp-projects/exper
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Still pretty good! While this is slightly higher RMSE than what was achieved on the validation set, it is still rather good when you consider the difficulty of the prediction task and the relative simplicity of the model head.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bcb83f1b-789e-4195-b9b7-5f6c3647b070">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Finally, let's save our results for further analysis.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4eaf8663-34ec-4fff-9719-1052ea0c43e4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pred_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"y"</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">lit_model</span><span class="o">.</span><span class="n">test_epoch_out</span><span class="p">[</span><span class="s2">"y"</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">"cpu"</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span>
+        <span class="s2">"yhat"</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">lit_model</span><span class="o">.</span><span class="n">test_epoch_out</span><span class="p">[</span><span class="s2">"yhat"</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">"cpu"</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2b2cde34-85c7-4a36-ba79-5c067f4f40e0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pred_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">results_base</span><span class="si">}</span><span class="s2">/predictions_df.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
