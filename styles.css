@@ -57,12 +57,14 @@
 
 .toc-link {
     color: #0077b5; /* LinkedIn blue color */
-    font-size: 15px;
+    font-size: 18px;
     /* display: block; */
-    margin: 15px 0;
+    /* margin: 15px 0; */
+    margin-top: 15px;
+    margin-right: 65px;
     /* position: relative; */
     padding-left: 10px; /* Space for the arrow icon */
-    padding-right: 80px;
+    /* padding-right: 80px; */
     /* word-wrap: break-word;
     overflow-wrap: break-word; */
 }
