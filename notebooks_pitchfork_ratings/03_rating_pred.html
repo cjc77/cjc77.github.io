@@ -7654,6 +7654,17 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4b7195b9-2161-4ae5-ac23-682764642693">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Remember how we found that most reviews were longer than the maximum sequence length our model could handle? Here, we will use the simplest solution available and truncate the review text. There are more sophisticated approaches we could take, but we will leave that as a possible extension to the model.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=993f416c-d209-47e3-a701-f33082f1857c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7851,14 +7862,14 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6bd5498b-9244-4257-b08f-379977f06292">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4534ccfc-3f31-4cfe-9f11-78849df983f8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Setup-for-fitting">Setup for fitting<a class="anchor-link" href="#Setup-for-fitting">¶</a></h2><p>Now, let's prepare to fit our model. Notice that we have two epoch variablesWe are fine-tuning a pre-trained model and will follow the common pattern of freezing the base model's parameters and training the new model head, then un-freezing the base model's parameters and training the full model with a low learning rate.ters.</p>
-<p>Here, we will prelatively fewery few epochs of training in both stages for a couple of reasons. First, this code is not being executed in a cloud environment with large amounts of compute, so we will try and keep things manageable. Second, given the dataset size and the relatively small number of parameters in the regression model head, the first step likely does not need all that many epochs to obtain good performance. Finally, when fine-tuning the model, it is often the case that overfitting will occur within just a few epochs due to how powerful the base model will typically be.</p>
+<h2 id="Setup-for-fitting">Setup for fitting<a class="anchor-link" href="#Setup-for-fitting">¶</a></h2><p>Now, let's prepare to fit our model. Notice that we have two epoch variablesWe are fine-tuning a pre-trained model and will follow the common pattern of freezing the base model's parameters and training the new model head, then un-freezing the base model's parameters and training the full model with a low learning rate.</p>
+<p>Here, we will perform relatively few epochs of training in both stages for a couple of reasons. First, this code is not being executed in a cloud environment with large amounts of compute, so we will try and keep things manageable. Second, given the dataset size and the relatively small number of parameters in the regression model head, the first step likely does not need all that many epochs to obtain good performance. Finally, when fine-tuning the model, it is often the case that overfitting will occur within just a few epochs due to how powerful the base model will typically be.</p>
 </div>
 </div>
 </div>
@@ -8316,30 +8327,10 @@ Loaded model weights from the checkpoint at /home/carcook/dev/nlp-projects/exper
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/home/carcook/dev/nlp-projects/myutilpy/myutilpy/models/text_regressor.py:136: UserWarning: Using a target size 
-(torch.Size([16, 1])) that is different to the input size (torch.Size([16])). This will likely lead to incorrect 
-results due to broadcasting. Please ensure they have the same size.
-  loss = self.criterion(yhat, ratings.unsqueeze(1))
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/home/carcook/dev/nlp-projects/myutilpy/myutilpy/models/text_regressor.py:136: UserWarning: Using a target size 
-(torch.Size([13, 1])) that is different to the input size (torch.Size([13])). This will likely lead to incorrect 
-results due to broadcasting. Please ensure they have the same size.
-  loss = self.criterion(yhat, ratings.unsqueeze(1))
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃<span style="font-weight: bold">        Test metric        </span>┃<span style="font-weight: bold">       DataLoader 0        </span>┃
 ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
-│<span style="color: #008080; text-decoration-color: #008080">       avg_test_loss       </span>│<span style="color: #800080; text-decoration-color: #800080">    1.4109914302825928     </span>│
+│<span style="color: #008080; text-decoration-color: #008080">       avg_test_loss       </span>│<span style="color: #800080; text-decoration-color: #800080">    1.2091145515441895     </span>│
 └───────────────────────────┴───────────────────────────┘
 </pre>
 </div>
@@ -8360,7 +8351,7 @@ results due to broadcasting. Please ensure they have the same size.
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[{'avg_test_loss': 1.4109914302825928}]</pre>
+<pre>[{'avg_test_loss': 1.2091145515441895}]</pre>
 </div>
 </div>
 </div>
@@ -8386,7 +8377,7 @@ results due to broadcasting. Please ensure they have the same size.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'mse': 1.1630003, 'rmse': 1.0784249}
+<pre>{'mse': 1.2091149, 'rmse': 1.0995976}
 </pre>
 </div>
 </div>
@@ -8692,7 +8683,7 @@ LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>`Trainer.fit` stopped: `max_epochs=4` reached.
+<pre>`Trainer.fit` stopped: `max_epochs=10` reached.
 </pre>
 </div>
 </div>
@@ -8759,30 +8750,10 @@ Loaded model weights from the checkpoint at /home/carcook/dev/nlp-projects/exper
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/home/carcook/dev/nlp-projects/myutilpy/myutilpy/models/text_regressor.py:136: UserWarning: Using a target size 
-(torch.Size([16, 1])) that is different to the input size (torch.Size([16])). This will likely lead to incorrect 
-results due to broadcasting. Please ensure they have the same size.
-  loss = self.criterion(yhat, ratings.unsqueeze(1))
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/home/carcook/dev/nlp-projects/myutilpy/myutilpy/models/text_regressor.py:136: UserWarning: Using a target size 
-(torch.Size([13, 1])) that is different to the input size (torch.Size([13])). This will likely lead to incorrect 
-results due to broadcasting. Please ensure they have the same size.
-  loss = self.criterion(yhat, ratings.unsqueeze(1))
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃<span style="font-weight: bold">        Test metric        </span>┃<span style="font-weight: bold">       DataLoader 0        </span>┃
 ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
-│<span style="color: #008080; text-decoration-color: #008080">       avg_test_loss       </span>│<span style="color: #800080; text-decoration-color: #800080">     1.781655192375183     </span>│
+│<span style="color: #008080; text-decoration-color: #008080">       avg_test_loss       </span>│<span style="color: #800080; text-decoration-color: #800080">    0.8832166194915771     </span>│
 └───────────────────────────┴───────────────────────────┘
 </pre>
 </div>
@@ -8803,7 +8774,7 @@ results due to broadcasting. Please ensure they have the same size.
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[{'avg_test_loss': 1.781655192375183}]</pre>
+<pre>[{'avg_test_loss': 0.8832166194915771}]</pre>
 </div>
 </div>
 </div>
@@ -8829,7 +8800,7 @@ results due to broadcasting. Please ensure they have the same size.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'mse': 0.8175451, 'rmse': 0.904182}
+<pre>{'mse': 0.8832167, 'rmse': 0.9397961}
 </pre>
 </div>
 </div>
@@ -8894,30 +8865,10 @@ Loaded model weights from the checkpoint at /home/carcook/dev/nlp-projects/exper
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/home/carcook/dev/nlp-projects/myutilpy/myutilpy/models/text_regressor.py:136: UserWarning: Using a target size 
-(torch.Size([16, 1])) that is different to the input size (torch.Size([16])). This will likely lead to incorrect 
-results due to broadcasting. Please ensure they have the same size.
-  loss = self.criterion(yhat, ratings.unsqueeze(1))
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/home/carcook/dev/nlp-projects/myutilpy/myutilpy/models/text_regressor.py:136: UserWarning: Using a target size 
-(torch.Size([14, 1])) that is different to the input size (torch.Size([14])). This will likely lead to incorrect 
-results due to broadcasting. Please ensure they have the same size.
-  loss = self.criterion(yhat, ratings.unsqueeze(1))
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃<span style="font-weight: bold">        Test metric        </span>┃<span style="font-weight: bold">       DataLoader 0        </span>┃
 ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
-│<span style="color: #008080; text-decoration-color: #008080">       avg_test_loss       </span>│<span style="color: #800080; text-decoration-color: #800080">    1.8949449062347412     </span>│
+│<span style="color: #008080; text-decoration-color: #008080">       avg_test_loss       </span>│<span style="color: #800080; text-decoration-color: #800080">    0.8020689487457275     </span>│
 └───────────────────────────┴───────────────────────────┘
 </pre>
 </div>
@@ -8938,7 +8889,7 @@ results due to broadcasting. Please ensure they have the same size.
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[{'avg_test_loss': 1.8949449062347412}]</pre>
+<pre>[{'avg_test_loss': 0.8020689487457275}]</pre>
 </div>
 </div>
 </div>
@@ -8964,7 +8915,7 @@ results due to broadcasting. Please ensure they have the same size.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'mse': 0.8960342, 'rmse': 0.94659084}
+<pre>{'mse': 0.80206877, 'rmse': 0.8955829}
 </pre>
 </div>
 </div>
@@ -8977,7 +8928,7 @@ results due to broadcasting. Please ensure they have the same size.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Still pretty good! While this is slightly higher RMSE than what was achieved on the validation set, it is still rather good when you consider the difficulty of the prediction task and the relative simplicity of the model head.</p>
+<p>Again, pretty good! It's important to bear in mind that these values are just estimates of generalizability and will likely vary depending on the train/validation/test splits.</p>
 </div>
 </div>
 </div>
@@ -8997,7 +8948,7 @@ results due to broadcasting. Please ensure they have the same size.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">pred_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
@@ -9016,7 +8967,7 @@ results due to broadcasting. Please ensure they have the same size.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">pred_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">results_base</span><span class="si">}</span><span class="s2">/predictions_df.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
