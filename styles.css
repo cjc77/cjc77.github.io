@@ -101,8 +101,8 @@
     text-align: center;
     background: #0077b5;  /* LinkedIn blue color */
     color: white;
-    bottom: 0;  /* Align to the bottom */
-    left: 0;  /* Align to the left */
+    bottom: 0;
+    /* left: 0;
     width: 100%;  /* Full width */
 }
 
