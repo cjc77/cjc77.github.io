@@ -1,8 +1,33 @@
+.hamburger {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.hamburger-line {
+    background-color: white;
+    height: 4px;
+    width: 30px;
+    margin: 6px 0;  /* Initial margin */
+    transition: margin 0.3s ease-in-out, opacity 0.3s ease-in-out;  /* Animate margin */
+}
+
+.hamburger-line.expand {
+    margin: 12px 0;  /* Increased margin */
+    opacity: 0.8;
+}
+
 .header {
     padding: 20px;
     text-align: center;
     background: #0077b5; /* LinkedIn blue color */
     color: white;
+    position: fixed;  /* Fix position */
+    top: 0;  /* Align to the top */
+    left: 0;  /* Align to the left */
+    width: 100%;  /* Full width */
+    z-index: 1000;  /* High z-index to keep it above other elements */
 }
 
 .header h1 {
@@ -15,128 +40,115 @@
     font-weight: bold;
 }
 
-.content {
-    margin: 40px;
+.header ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    overflow: hidden;
+    /* display: none; */
+    max-height: 0px;
+    opacity: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.content a {
-    color: #0077b5; /* LinkedIn blue color */
+/* After menu click */
+.header ul.active {
+    max-height: 600px; /* Adjust based on your needs */
+    opacity: 1;
 }
 
-.content a:hover {
-    text-decoration: underline;
+.header li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
 }
 
-.toc-list {
-    margin-left: -10px; /* Indentation for the content */
-    padding-top: 0px;
-    margin-top: -20px;
-}
-
-.toc-item {
-    position: relative;
-    padding-left: 0px; /* Space for the arrow icon */
-    align-items: center; /* Vertically align children */
-    /* line-height: 1.5; */
-}
-
-.toc-item:before {
-    /* content: "→"; */
-    content: "\f061"; /* Font Awesome right arrow icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f0a9";
-    width: 20px; /* Width of the hanging indent */
-    /* height: 100%; */
-    /* position: absolute; */
-    position: relative;
-    /* display: flex; */
-    left: 0px; /* Position of the hanging indent */
-    color: #0077b5; /* LinkedIn blue color */
-}
-
-.toc-link {
-    color: #0077b5; /* LinkedIn blue color */
-    font-size: 15px;
-    /* display: block; */
-    /* margin: 15px 0; */
-    margin-top: 15px;
-    margin-right: 65px;
-    /* position: relative; */
-    padding-left: 10px; /* Space for the arrow icon */
-    /* padding-right: 80px; */
-    /* word-wrap: break-word;
-    overflow-wrap: break-word; */
-}
-
-.toc-link:hover {
-    text-decoration: underline;
-}
-
-.in-progress {
-    font-style: italic; /* Optional: italicize the text */
-    color: #888;       /* Optional: set a subtle color */
-}
-
-.breadcrumb {
-    font-size: 14px; /* Adjust the font size */
-    color: #666;    /* Set the text color */
-}
-
-.breadcrumb a {
-    text-decoration: none; /* Remove underline from the link */
-    color: #0077b5;        /* Set the link color */
-}
-
-.breadcrumb a:hover {
-    text-decoration: underline; /* Add underline on hover */
-}
-
-.bio-section {
-    background-color: #f9f9f9; /* Light background color */
-    padding: 20px;             /* Padding for spacing */
-    margin: 20px 40px 0px 40px;           /* Margin for spacing */
-    /* border-radius: 10px;       Rounded corners */
-    max-width: 1200px;          /* Maximum width to prevent continuous expansion */
-    border-radius: 10px;       /* Slightly rounded corners */
-}
-
-.bio-section h3 {
-    color: #333;               /* Color for the heading */
-    margin-bottom: 10px;       /* Space below the heading */
-}
-
-.bio-section p {
-    line-height: 1.6;          /* Line spacing for readability */
-    color: #555;               /* Text color */
-}
-
-.proj-description {
-    background-color: #f9f9f9; /* Light background color */
-    padding: 20px;             /* Padding for spacing */
-    /* margin: 20px 0;            Margin for spacing */
-    margin: 0px 65px 0px 30px; /* Margin for spacing, with left margin */
-    max-width: 1200px;          /* Maximum width to prevent continuous expansion */
-    border-radius: 10px;       /* Slightly rounded corners */
-}
-
-.proj-description-title {
-    color: #333;               /* Color for the heading */
-    font-size: 24px;
-    margin-bottom: 10px;
-    vertical-align: top;
+.header li a:hover {
+    /* Darker blue for hover */
+    /* background-color: #005a8c; */
+    color: #d1aa00;
 }
 
 
-h2 {
-    padding-left: 20px;
-    font-size: 24px; /* Adjust the font size as needed */
-    margin-top: 20px;  /* Margin for spacing */
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    color: #333;    /* Color for the heading */
+.header li:first-child::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background: linear-gradient(to right, transparent, white, transparent);
+    width: 400px;
+    /* width: 200%;
+    margin-left: -50%; */
+}
+
+.header li::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: linear-gradient(to right, transparent, white, transparent);
+    width: 400px;
+    /* width: 200%;
+    margin-left: -50%;  */
+}
+
+
+/* Gray horizontal line */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ccc, transparent);
+    margin: 40px 0;
+}
+
+/* Gray horizontal line */
+.subsection-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ccc, transparent);
+    width: 200px;
+    margin: 40px auto;
+}
+
+#summary {
+    /* This is set dynamically */
+    margin-top: 0px;
+}
+
+.content-section {
+    margin: 20px 50px;  /* Vertical and horizontal margins */
+}
+
+.content-section h2 {
+    font-size: 26px;
+}
+
+.content-section h3 {
+    font-size: 17px;
+}
+
+.content-section h4 {
+    font-size: 16px;
+}
+
+/* Subheading style */
+.content-section .subheading {
+    font-size: 18px;
+    color: #5A6B7C;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 p {
-    font-size: 15px;
+    font-size: 14px;
+}
+
+a {
+    color: #d1aa00;
+    font-size: 14px;
+}
+
+/* Change link color to blue when hovered over */
+a:hover {
+    color: #d1aa00;
 }

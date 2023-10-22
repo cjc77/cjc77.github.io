@@ -12,36 +12,81 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="header">
+    <!-- <div class="header">
         <h1>Carson Cook</h1>
         <p>Data Science & Machine Learning Practitioner</p>
+    </div> -->
+    <div class="header">
+        <h1>Carson Cook</h1>
+        <div class="hamburger" id="hamburger">
+            <div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </div> <!-- Moved Hamburger menu -->
+        
+        <p>Data Science & Machine Learning Practitioner</p>
+        <!-- <div class="hamburger">&#9776;</div>  -->
+        <ul id="menu">
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#resume-and-links">Resume and Links</a></li>
+        </ul>
     </div>
-    <div class="breadcrumb">
-        Home
-    </div>
-    <h2>Summary</h2>
-    <div class="bio-section">
+    <!-- Summary Section -->
+    <section id="summary" class="content-section">
+        <h2>Summary</h2>
+        <p class="subheading">I am a machine learning and data science practitioner who is passionate about tackling challenging problems in applied areas.</p>
         <p>
-            I am a machine learning and data science practitioner who is passionate about tackling challenging problems in applied areas. My academic background is in computer science, statistics, and bioinformatics. My academic and professional career have both involved applications of machine learning, deep learning, and statistical modeling. In my professional career, I have focused on student latent knowledge state modeling, educational content recommendation systems, and natural language processing. Previously, I worked on projects related to scientific instrumentation, including cell image analysis with deep learning and flow cytometry data analysis and collection. I also have professional experience in traditional software engineering and data analysis. In my graduate research, I focused primarily on transcriptomic analysis and image modeling for applications in tissue engineering.
+            My academic and professional career have both involved applications of <strong>machine learning, deep learning, and statistical modeling</strong>. In my professional career, I currently focus on <strong>latent knowledge state modeling, content recommendation systems, and natural language processing</strong>. Previously, I worked on projects related to scientific instrumentation, including cell image analysis with deep learning and flow cytometry data analysis and collection. I also have professional experience in traditional software engineering and data analysis. In my graduate research, I focused primarily on transcriptomic analysis and image modeling for applications in tissue engineering.
         </p>
-    </div>
-    <h2>Links</h2>
-    <div class="content container">
-        <div class="toc-list">
-            <div class="toc-item">
-                <a href="https://www.linkedin.com/in/carson-cook-15269a32/" class="toc-link" target="_blank">LinkedIn</a>
-            </div>
-            <div class="toc-item">
-                <a href="https://github.com/cjc77" class="toc-link" target="_blank">GitHub</a>
-            </div>
-            <div class="toc-item">
-                <a href="portfolio-toc.html" class="toc-link">Portfolio</a>
-            </div>
-        </div>
-    </div>
+
+        <hr class="section-divider">
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="content-section">
+        <h2>Portfolio</h2>
+        <p class="subheading">These are some personal projects where I've applied my machine learning and data science expertise.</p>
+
+        <h3>Predicting Pitchfork Album Ratings from Review Text</h3>
+        <h4>Goal</h4>
+        <p>
+            The intended purpose of this project was to provide a start-to-finish example of an NLP transfer learning task, detailing data cleaning, exploratory data analysis, model fitting, and post-fit model prediction analysis.
+        </p>
+        <h4>Summary</h4>
+        <p>
+            In this project, I built a regression model to predict album ratings based on review text body. This was accomplished by building a regressor on top of a pre-trained transformer model and performing task-specific fine-tuning. The project consists of a sequence of jupyter notebooks and a corresponding custom library. The notebooks are available as both the original <code>.ipynb</code> source and <code>.html</code> exports.
+        </p>
+        <h4>Links</h4>
+        <ul>
+            <li><a href="https://github.com/cjc77/nlp-projects#pitchfork-rating-prediction" target="_blank">README (GitHub)</a></li>
+            <li><a href="https://github.com/cjc77/nlp-projects/tree/main/notebooks_pitchfork_ratings" target="_blank">Notebooks (GitHub, .ipynb)</a></li>
+            <li><a href="./notebooks_pitchfork_ratings/01_initial_data_prep.html" target="_blank">Notebooks (.html)</a></li>
+        </ul>
+        <hr class="subsection-divider">
+        <h3>Exploring pooling in Bayesian linear modeling</h3>
+        <p>
+            Coming soon...
+        </p>
+        <hr class="section-divider">
+    </section>
+    <section id="resume-and-links" class="content-section">
+        <h2>Resume</h2>
+        <h4>Links</h4>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/carson-cook-15269a32/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/cjc77" target="_blank">GitHub</a></li>
+        </ul>
+    </section>
     <!-- Include Bootstrap JS (Optional) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

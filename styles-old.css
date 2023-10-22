@@ -1,0 +1,142 @@
+.header {
+    padding: 20px;
+    text-align: center;
+    background: #0077b5; /* LinkedIn blue color */
+    color: white;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin: 5px 0;
+}
+
+.header p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.content {
+    margin: 40px;
+}
+
+.content a {
+    color: #0077b5; /* LinkedIn blue color */
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+.toc-list {
+    margin-left: -10px; /* Indentation for the content */
+    padding-top: 0px;
+    margin-top: -20px;
+}
+
+.toc-item {
+    position: relative;
+    padding-left: 0px; /* Space for the arrow icon */
+    align-items: center; /* Vertically align children */
+    /* line-height: 1.5; */
+}
+
+.toc-item:before {
+    /* content: "→"; */
+    content: "\f061"; /* Font Awesome right arrow icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0a9";
+    width: 20px; /* Width of the hanging indent */
+    /* height: 100%; */
+    /* position: absolute; */
+    position: relative;
+    /* display: flex; */
+    left: 0px; /* Position of the hanging indent */
+    color: #0077b5; /* LinkedIn blue color */
+}
+
+.toc-link {
+    color: #0077b5; /* LinkedIn blue color */
+    font-size: 15px;
+    /* display: block; */
+    /* margin: 15px 0; */
+    margin-top: 15px;
+    margin-right: 65px;
+    /* position: relative; */
+    padding-left: 10px; /* Space for the arrow icon */
+    /* padding-right: 80px; */
+    /* word-wrap: break-word;
+    overflow-wrap: break-word; */
+}
+
+.toc-link:hover {
+    text-decoration: underline;
+}
+
+.in-progress {
+    font-style: italic; /* Optional: italicize the text */
+    color: #888;       /* Optional: set a subtle color */
+}
+
+.breadcrumb {
+    font-size: 14px; /* Adjust the font size */
+    color: #666;    /* Set the text color */
+}
+
+.breadcrumb a {
+    text-decoration: none; /* Remove underline from the link */
+    color: #0077b5;        /* Set the link color */
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.bio-section {
+    background-color: #f9f9f9; /* Light background color */
+    padding: 20px;             /* Padding for spacing */
+    margin: 20px 40px 0px 40px;           /* Margin for spacing */
+    /* border-radius: 10px;       Rounded corners */
+    max-width: 1200px;          /* Maximum width to prevent continuous expansion */
+    border-radius: 10px;       /* Slightly rounded corners */
+}
+
+.bio-section h3 {
+    color: #333;               /* Color for the heading */
+    margin-bottom: 10px;       /* Space below the heading */
+}
+
+.bio-section p {
+    line-height: 1.6;          /* Line spacing for readability */
+    color: #555;               /* Text color */
+}
+
+.proj-description {
+    background-color: #f9f9f9; /* Light background color */
+    padding: 20px;             /* Padding for spacing */
+    /* margin: 20px 0;            Margin for spacing */
+    margin: 0px 65px 0px 30px; /* Margin for spacing, with left margin */
+    max-width: 1200px;          /* Maximum width to prevent continuous expansion */
+    border-radius: 10px;       /* Slightly rounded corners */
+}
+
+.proj-description-title {
+    color: #333;               /* Color for the heading */
+    font-size: 24px;
+    margin-bottom: 10px;
+    vertical-align: top;
+}
+
+
+h2 {
+    padding-left: 20px;
+    font-size: 24px; /* Adjust the font size as needed */
+    margin-top: 20px;  /* Margin for spacing */
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    color: #333;    /* Color for the heading */
+}
+
+p {
+    font-size: 15px;
+}
