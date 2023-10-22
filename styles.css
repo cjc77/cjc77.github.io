@@ -19,7 +19,8 @@
 }
 
 .header {
-    padding: 20px;
+    /* padding: 20px; */
+    padding-top: 20px;
     text-align: center;
     background: #0077b5; /* LinkedIn blue color */
     color: white;
@@ -32,11 +33,13 @@
 
 .header h1 {
     font-size: 36px;
-    margin: 5px 0;
+    /* margin: 5px 0; */
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .header p {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -92,6 +95,39 @@
     margin-left: -50%;  */
 }
 
+.footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    background: #0077b5;  /* LinkedIn blue color */
+    color: white;
+    bottom: 0;  /* Align to the bottom */
+    left: 0;  /* Align to the left */
+    width: 100%;  /* Full width */
+}
+
+.footer-icon {
+    margin: 0 10px;  /* Horizontal spacing */
+}
+
+.footer-icon:hover {
+  text-decoration: none;  /* Remove underline */
+}
+
+.icon-container {
+    display: block;
+}
+
+.footer-icon {
+    margin: 0 8px;
+    text-decoration: none;
+}
+
+.copyright {
+    font-size: 12px;
+    display: block;
+    margin-top: 10px;
+}
 
 /* Gray horizontal line */
 .section-divider {
@@ -124,11 +160,11 @@
 }
 
 .content-section h3 {
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .content-section h4 {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 /* Subheading style */
@@ -148,7 +184,6 @@ a {
     font-size: 14px;
 }
 
-/* Change link color to blue when hovered over */
 a:hover {
     color: #d1aa00;
 }

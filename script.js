@@ -47,7 +47,8 @@ document.addEventListener("DOMContentLoaded", function() {
             lines.forEach(line => {
                 line.classList.remove("expand");
             });
-            summary.style.marginTop = 200 + "px";
+            // // summary.style.marginTop = 200 + "px";
+            // setTimeout(updateSummaryMargin, 500);
 
             // Scroll to the target section, adjusted for menu height
             const menuHeight = menu.offsetHeight;

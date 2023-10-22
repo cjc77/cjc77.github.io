@@ -12,10 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- <div class="header">
-        <h1>Carson Cook</h1>
-        <p>Data Science & Machine Learning Practitioner</p>
-    </div> -->
     <div class="header">
         <h1>Carson Cook</h1>
         <div class="hamburger" id="hamburger">
@@ -24,10 +20,9 @@
                 <div class="hamburger-line"></div>
                 <div class="hamburger-line"></div>
             </div>
-        </div> <!-- Moved Hamburger menu -->
+        </div>
         
-        <p>Data Scientist | ML Engineer</p>
-        <!-- <div class="hamburger">&#9776;</div>  -->
+        <p>Data Science | ML Engineering</p>
         <ul id="menu">
             <li><a href="#summary">Summary</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
@@ -51,8 +46,8 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="content-section">
         <h2>Portfolio</h2>
-        <p class="subheading">These are some personal projects where I've applied my machine learning and data science expertise.</p>
-
+        <p class="subheading">A selection of personal projects demonstrating my knowledge of applied machine learning and data science.</p>
+        <hr class="subsection-divider">
         <h3>Predicting Pitchfork Album Ratings from Review Text</h3>
         <h4>Goal</h4>
         <p>
@@ -60,7 +55,7 @@
         </p>
         <h4>Summary</h4>
         <p>
-            In this project, I built a regression model to predict album ratings based on review text body. This was accomplished by building a regressor on top of a pre-trained transformer model and performing task-specific fine-tuning. The project consists of a sequence of jupyter notebooks and a corresponding custom library. The notebooks are available as both the original <code>.ipynb</code> source and <code>.html</code> exports.
+            In this project, I built a regression model to predict album ratings based on review text body. This was accomplished by building a regressor on top of a pre-trained transformer model and performing task-specific fine-tuning. This sequence of notebooks utilizes a <a href="https://pitchfork.com/">Pitchfork</a> reviews dataset of approximately 20K album reviews (<a href="https://huggingface.co/datasets/mattismegevand/pitchfork">mattismegevand/pitchfork</a>). The project consists of a sequence of jupyter notebooks and a corresponding custom library. The notebooks are available as both the original <code>.ipynb</code> source and <code>.html</code> exports.
         </p>
         <h4>Links</h4>
         <ul>
@@ -75,14 +70,32 @@
         </p>
         <hr class="section-divider">
     </section>
-    <section id="resume-and-links" class="content-section">
+    <section id="resume-and-links" class="content-section" style="margin-bottom: 60px;">
         <h2>Resume</h2>
-        <h4>Links</h4>
-        <ul>
-            <li><a href="https://www.linkedin.com/in/carson-cook-15269a32/" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com/cjc77" target="_blank">GitHub</a></li>
-        </ul>
+        <p style="margin-top: 20px;">
+            <a href="https://www.linkedin.com/in/carson-cook-15269a32/" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/cjc77" target="_blank" style="padding-left: 40px;">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://docs.google.com/document/d/1iJR1QjKW_osyzJVPYxgNvjlQ4CO5oF9oTSSI6ZybpsY/edit?usp=sharing" target="_blank" style="padding-left: 40px;">
+                <i class="fa fa-file"></i> Resume
+            </a>
+        </p>
     </section>
+    <div class="footer">
+        <div class="icon-container">
+          <a href="https://github.com/your-username" target="_blank" class="footer-icon">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/your-profile/" target="_blank" class="footer-icon">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+        </div>
+        <span class="copyright">© Carson Cook </span>
+      </div>
+      
     <!-- Include Bootstrap JS (Optional) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
