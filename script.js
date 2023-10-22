@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to update the margin-top of the summary section
     function updateSummaryMargin() {
         const headerHeight = document.querySelector(".header").offsetHeight + 40;
-        const menuHeight = menu.classList.contains("active") ? 0 : 0; // Adjust the menu height as needed
-        summary.style.marginTop = (headerHeight + menuHeight) + "px";
+        // const menuHeight = menu.classList.contains("active") ? 0 : 0; // Adjust the menu height as needed
+        summary.style.marginTop = (headerHeight) + "px";
     }
 
     // Call the function to set the initial margin-top
@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", function() {
         // setTimeout(updateSummaryMargin, 500);
     });
 
-    // Add a resize event listener to adjust the summary padding when the window is resized
-    window.addEventListener("resize", function() {
-        updateSummaryMargin();
-    });
+    // // Add a resize event listener to adjust the summary padding when the window is resized
+    // window.addEventListener("resize", function() {
+    //     updateSummaryMargin();
+    // });
 
     // Get all menu links
     const menuLinks = document.querySelectorAll("#menu a");
