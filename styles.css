@@ -29,6 +29,7 @@
     left: 0;  /* Align to the left */
     width: 100%;  /* Full width */
     z-index: 1000;  /* High z-index to keep it above other elements */
+    /* box-sizing: border-box; */
 }
 
 .header h1 {
@@ -104,6 +105,7 @@
     bottom: 0;
     /* left: 0;
     width: 100%;  /* Full width */
+    /* box-sizing: border-box; */
 }
 
 .footer-icon {
@@ -207,6 +209,6 @@ blockquote {
     flex: 1;
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
