@@ -201,12 +201,12 @@ blockquote {
 
 .flex-container {
     display: flex;
-  }
-  
-  .column {
+}
+
+.column {
     flex: 1;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
-  }
+}
