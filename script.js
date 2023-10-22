@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to update the margin-top of the summary section
     function updateSummaryMargin() {
-        const headerHeight = document.querySelector(".header").offsetHeight + 40;
+        const headerHeight = document.querySelector(".header").offsetHeight + 20;
         // const menuHeight = menu.classList.contains("active") ? 0 : 0; // Adjust the menu height as needed
         summary.style.marginTop = (headerHeight) + "px";
     }
