@@ -251,3 +251,17 @@ blockquote {
         padding: 0;
     }
 }
+
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+}
+
+.responsive-image {
+    width: 60%;
+    height: auto;
+}
+
