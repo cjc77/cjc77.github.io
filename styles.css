@@ -203,10 +203,15 @@ p {
 a {
     color: #d1aa00;
     font-size: 14px;
+    text-decoration: underline;
+    /* text-decoration-style: dotted; */
+    /* text-underline-offset: 0.4em; */
 }
 
 a:hover {
     color: #d1aa00;
+    text-decoration: none;
+    /* text-decoration-style: none; */
 }
 
 blockquote {
