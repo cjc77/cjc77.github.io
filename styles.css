@@ -10,15 +10,21 @@
     height: 4px;
     width: 30px;
     /* margin: 6px 0;  */
-    margin-bottom: 6px;
+    /* margin-bottom: 6px; */
+    margin-bottom: 0px;
     transition: margin 0.4s ease-in-out, opacity 0.4s ease-in-out;  /* Animate margin */
 }
 
+#line-1, #line-2 {
+    margin-bottom: 6px;
+}
+
 .hamburger-line.expand {
-    /* margin: 12px 0; */
-    /* margin-bottom: 12px; */
-    margin-bottom: 20px;
     opacity: 0.5;
+}
+
+#line-1.expand, #line-2.expand {
+    margin-bottom: 20px;
 }
 
 .header {
@@ -26,18 +32,17 @@
     padding-bottom: 0px;
     /* padding-left: 20px; */
     text-align: center;
-    /* text-align: left; */
-    background: #0077b5; /* LinkedIn blue color */
+    background: #0077b5;
     color: white;
-    position: fixed;  /* Fix position */
-    top: 0;  /* Align to the top */
-    left: 0;  /* Align to the left */
-    width: 100%;  /* Full width */
-    z-index: 1000;  /* High z-index to keep it above other elements */
-    /* box-sizing: border-box; */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .header h1 {
+    text-align: left;
     font-size: 36px;
     /* margin: 5px 0; */
     /* margin-top: 5px; */
@@ -46,10 +51,25 @@
 }
 
 .header p {
+    text-align: left;
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 0px;
     padding-left: 20px;
+}
+
+@media (max-width: 320px) {
+    .header h1, .header p {
+        text-align: center;
+        padding-left: 0px;
+    }
+    .hamburger {
+        position: static;  /* Reset to static positioning */
+        display: flex;  /* Use flexbox to center the hamburger lines */
+        justify-content: center;  /* Center align */
+        padding-top: 20px;
+        margin-bottom: 0px;
+    }
 }
 
 .header ul {
@@ -87,29 +107,20 @@
     color: #d1aa00;
 }
 
-/* .header li:first-child::before {
-    content: "";
-    display: block;
-    height: 1px;
-    background: linear-gradient(to right, transparent, white, transparent);
-    width: 400px;
-}
-*/
-
-/* .header li::after {
-    content: "";
-    display: block;
-    height: 1px;
-    background: linear-gradient(to right, transparent, white, transparent);
-    width: 400px;
-} */
-
 .header li:not(:last-child)::after {
     content: "";
     display: block;
     height: 1px;
     background: linear-gradient(to right, transparent, white, transparent);
-    width: 300px;
+    /* width: 300px; */
+    /* margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 40px); */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    /* width: calc(100vw - 40px); */
+    width: calc(70vw);
 }
 
 .footer {

@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const menu = document.getElementById("menu");
     const lines = document.querySelectorAll(".hamburger-line");
     const summary = document.getElementById("summary");
+    const header = document.getElementById("header");
+    const headerUl = document.querySelector('.header ul');
+
+    // Call the function to set the initial margin-top
+    updateSummaryMargin();
 
     // Function to update the margin-top of the summary section
     function updateSummaryMargin() {
@@ -11,23 +16,54 @@ document.addEventListener("DOMContentLoaded", function() {
         summary.style.marginTop = (headerHeight) + "px";
     }
 
-    // Call the function to set the initial margin-top
-    updateSummaryMargin();
+    // Example function to check if menu is active
+    function menuIsActive() {
+        return menu.classList.contains('active');
+    }
 
-    hamburger.addEventListener("click", function() {
-        menu.classList.toggle("active");
+    // Function to close the menu
+    function closeMenu() {
+        // Close the menu
+        menu.classList.remove("active");
         lines.forEach(line => {
-            line.classList.toggle("expand");
+            line.classList.remove("expand");
         });
+    }
 
-        // // Update margin-top for the summary section
-        // setTimeout(updateSummaryMargin, 500);
+    // If window is resized, close menu & update the margin for top heading section 
+    window.addEventListener("resize", function() {
+        closeMenu();
+        updateSummaryMargin();
     });
 
-    // // Add a resize event listener to adjust the summary padding when the window is resized
-    // window.addEventListener("resize", function() {
-    //     updateSummaryMargin();
-    // });
+    // Once header menu close animation completes, update margin for top heading section
+    // Need this in case window is resized while menu is open
+    headerUl.addEventListener('transitionend', function(event) {
+        // Check if the transitioned property is the one you're interested in, e.g., 'max-height'
+        // Only want to update margin when menu is closing
+        if (event.propertyName === 'max-height' && !menuIsActive()) {
+            updateSummaryMargin();
+        }
+    });
+
+    document.addEventListener("click", function(event) {
+        if (header.contains(event.target)) {
+            // Clicked inside the header (which includes the hamburger and menu)
+            if (hamburger.contains(event.target)) {
+                // Specifically clicked the hamburger
+                menu.classList.toggle("active");
+                lines.forEach(line => {
+                    line.classList.toggle("expand");
+                });
+            }
+        } else {
+            // Clicked outside the header
+            menu.classList.remove("active");
+            lines.forEach(line => {
+                line.classList.remove("expand");
+            });
+        }
+    });
 
     // Get all menu links
     const menuLinks = document.querySelectorAll("#menu a");
@@ -43,12 +79,11 @@ document.addEventListener("DOMContentLoaded", function() {
             const targetSection = document.getElementById(targetId);
 
             // Close the menu
-            menu.classList.remove("active");
-            lines.forEach(line => {
-                line.classList.remove("expand");
-            });
-            // // summary.style.marginTop = 200 + "px";
-            // setTimeout(updateSummaryMargin, 500);
+            // menu.classList.remove("active");
+            // lines.forEach(line => {
+            //     line.classList.remove("expand");
+            // });
+            closeMenu();
 
             // Scroll to the target section, adjusted for menu height
             const menuHeight = menu.offsetHeight;
@@ -58,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 top: offsetTop,
                 behavior: "smooth"
             });
-
         });
     });
 });
