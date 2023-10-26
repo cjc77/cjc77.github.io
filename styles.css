@@ -198,7 +198,9 @@
 }
 
 .content-section {
-    margin: 20px 20px;  /* Vertical and horizontal margins */
+    /* margin: 20px 20px; */
+    width: 80%;
+    margin: 20px auto;
 }
 
 .content-section h2 {
@@ -241,7 +243,7 @@ a:hover {
 }
 
 blockquote {
-    margin: 20px;
+    margin: 10px;
     /* padding: 10px; */
     padding-left: 10px;
     border-left: 2px solid #ccc;
