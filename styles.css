@@ -344,3 +344,48 @@ blockquote {
 .flex-container a#publication:hover::after {
     content: "View Publication";
 }
+
+#headshot {
+    border-radius: 50%;  /* Circular crop */
+    width: 150px;  /* Set width */
+    height: 150px;  /* Set height */
+    object-fit: cover;  /* Cover entire element box */
+    margin-bottom: 10px;
+}
+
+.summary-container {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    max-width: 550px;
+    justify-content: center;
+    margin: auto;
+}
+
+.summary-container .subheading {
+    flex: 1;
+    padding-left: 20px;
+    margin-bottom: 0px;
+}
+
+/* @media (max-width: 500px) {
+    #headshot {
+        width: 110px;
+        height: 110px;
+    }
+} */
+
+@media (max-width: 500px) {
+    #headshot {
+        width: 110px;
+        height: 110px;
+    }
+    .summary-container {
+        flex-direction: column;  /* Stack items vertically */
+        align-items: center;  /* Center items horizontally */
+    }
+    .summary-container .subheading {
+        padding-left: 0;  /* Remove left padding */
+        text-align: center;  /* Center text */
+    }
+}
