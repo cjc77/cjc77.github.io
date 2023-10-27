@@ -180,7 +180,7 @@
     height: 1px;
     /* background: linear-gradient(to right, transparent, #ccc, transparent); */
     background-color: #ccc;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 /* Gray horizontal line */
@@ -188,8 +188,9 @@
     border: 0;
     height: 1px;
     background: linear-gradient(to right, transparent, #ccc, transparent);
-    width: 200px;
-    margin: 20px auto;
+    /* width: 200px; */
+    width: 40%;
+    margin: 30px auto;
 }
 
 #summary {
@@ -251,9 +252,10 @@ blockquote {
     font-size: 14px;
 }
 
-.flex-container {
+.flex-container-skill {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .column {
