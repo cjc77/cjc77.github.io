@@ -25,8 +25,8 @@
         
         <ul id="menu">
             <li><a href="#summary">Summary</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#research">Research</a></li>
+            <li><a href="#personal-projects">Personal Projects</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#resume-and-links">Resume and Links</a></li>
@@ -49,38 +49,6 @@
         <hr class="section-divider">
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="content-section">
-        <h2>Portfolio</h2>
-        <p class="subheading">A selection of personal projects demonstrating my expertise in machine learning and data science.</p>
-        <hr class="subsection-divider">
-        <h3>Predicting Pitchfork Album Ratings from Review Text</h3>
-        <h4>Goal</h4>
-        <p>
-            This project provides a start-to-finish example of an NLP transfer learning task, detailing data cleaning, exploratory data analysis, model fitting, and post-fit model prediction analysis.
-        </p>
-        <h4>Summary</h4>
-        <p>
-            In this project, I built a regression model to predict album ratings based on review text body. This was accomplished by building a regressor on top of a pre-trained transformer model and performing task-specific fine-tuning. This sequence of notebooks utilizes a <a href="https://pitchfork.com/">Pitchfork</a> reviews dataset of approximately 20K album reviews (<a href="https://huggingface.co/datasets/mattismegevand/pitchfork">mattismegevand/pitchfork</a>). The project consists of a sequence of jupyter notebooks and a corresponding custom library. The notebooks are available as both the original <code>.ipynb</code> source and <code>.html</code> exports.
-        </p>
-        <div class="flex-container" id="repo">
-            <a href="https://github.com/cjc77/nlp-projects#pitchfork-rating-prediction" target="_blank">
-                <img src="media/pitchfork_rating_distribution.png" class="responsive-image">
-            </a>
-        </div>
-        <h4>Links</h4>
-        <ul>
-            <li><a href="https://github.com/cjc77/nlp-projects#pitchfork-rating-prediction" target="_blank">README (GitHub)</a></li>
-            <li><a href="https://github.com/cjc77/nlp-projects/tree/main/notebooks_pitchfork_ratings" target="_blank">Notebooks (GitHub, .ipynb)</a></li>
-            <li><a href="./notebooks_pitchfork_ratings/01_initial_data_prep.html" target="_blank">Notebooks (.html)</a></li>
-        </ul>
-        <hr class="subsection-divider">
-        <h3>Exploring Pooling in Bayesian Linear Modeling</h3>
-        <p>
-            Coming soon...
-        </p>
-        <hr class="section-divider">
-    </section>
     <!-- Research Section -->
     <section id="research" class="content-section">
         <h2>Research</h2>
@@ -101,6 +69,38 @@
         <div class="flex-container">
             <a href="https://doi.org/10.1145/3573051.3593392" target="_blank"  id="publication">
                 <img src="media/lens_paper_figure.png" class="responsive-image">
+            </a>
+        </div>
+        <hr class="subsection-divider">
+
+        <h3>Student State Space Modeling with Bayesian Information Integration</h3>
+        <p>
+            Carson Cook, Garron Gianopulos, Emily Lubkert, Yeow Meng Thum, and S. Thomas Christie. <a href="media/bayesian_information_integration_for_summative_scores_presentation.pdf" target="_blank">Presented: NCME Annual Meeting (2023), NCSA (2023).</a>
+        </p>
+        <blockquote>
+            In the United States, summative assessments - <strong>standardized tests taken at a single point in time, typically at the end of the school year - are widely used for accountability purposes; however, the results of these assessments come too late in the school year to have an impact on classroom instruction.</strong> In response, many districts look to interim assessments, which are administered multiple times through the school year, for more timely feedback on the student progress. Through-year assessments are an emerging alternative where the goal is frequently to administer interim assessments and use their results to arrive at summative scores. <strong>This approach is intended to satisfy the twin objectives of (1) providing timely feedback on student progress and (2) eliminate the need for a separate summative test to reduce testing burden.</strong> Unfortunately, this creates another challenge: how should multiple test scores be combined to produce a single summative score? If the goal is to arrive at a summative score that combines information across tests, is measurement-centric, and requires few hand-tuning decisions, there is currently no favored method.
+            
+            To address this challenge, <strong>we created a Bayesian state space model, inspired by the Kalman filter, that combines information across test events to arrive at a composite score that can be used for summative purposes.</strong> Our model uses three test scores - fall, winter, and spring - together with expected growth to produce an estimate of student proficiency in the spring. We fit our model to simulated data and found that, though the estimates produced by our model were somewhat biased for simulated students with atypical growth, it performed substantially better in terms of RMSE than the using the spring score alone. We also evaluated the model fit on a historical MAP Growth dataset, via Bayesian model comparison, and found that the proposed model is more likely to have generated the data than the baseline model, which simply uses spring scores as the ability estimates.
+        </blockquote>
+        <div class="flex-container">
+            <a href="media/bayesian_information_integration_for_summative_scores_presentation.pdf" target="_blank"  id="presentation">
+                <img src="media/bayesian_state_space_model.png" class="responsive-image">
+            </a>
+        </div>
+        <hr class="subsection-divider">
+
+        <h3>Group-Level Ability Estimation Using Bayesian Multilevel Modeling: Opportunities and Limitations</h3>
+        <p>
+            S. Thomas Christie, Carson Cook, and Garron Gianopulos. <a href="media/OTL_overview.pdf" target="_blank">Presented: NCME Annual Meeting (2023), NCSA (2023).</a>
+        </p>
+        <blockquote>
+            Granular, <strong>instructionally-relevant sub-scores have the potential to increase the utility of standardized assessment reports for teachers in the classroom.</strong> However, existing procedures tend to produce sub-scores with poor reliability due to the small number of item responses used to compute them. <strong>Since instructional planning decisions are often made for groups of students, we introduce and evaluate a model for group-level sub-scores that allows us to pool information across students and produces one sub-score per reporting category per student group.</strong> Our primary interest is whether coordinate shift in performance by students is detectable given our method. Specifically, we investigate whether a granular class-level score reveals a detectable difference in performance within specific reporting categories when compared to the responses predicted by overall scores. Through this lens, a sub-score would identify class-wide areas of strength or opportunities for class-level instruction, thereby assisting teachers with instructional planning.
+            
+            To validate the proposed approach, <strong>we conducted a simulation study and determined the effect size, class size, and the number of item responses required to detect class-level performance differences within granular item reporting categories.</strong> We then applied our modeling approach to historical ELA and Math assessment data to characterize its potential utility in those domains. Our findings indicate that this method may have utility for identifying variation in class-level performance at the level of reporting categories, but this is highly dependent on the test blueprint and the magnitude of the effect.
+        </blockquote>
+        <div class="flex-container">
+            <a href="media/OTL_overview.pdf" target="_blank"  id="presentation">
+                <img src="media/group_plate_model_diagram.png" class="responsive-image">
             </a>
         </div>
         <hr class="subsection-divider">
@@ -133,6 +133,39 @@
         </div>
         <hr class="section-divider">
         
+    </section>
+
+    <!-- Personal Projects Section -->
+    <section id="personal-projects" class="content-section">
+        <h2>Personal Projects</h2>
+        <p class="subheading">A selection of personal projects demonstrating my expertise in machine learning and data science.</p>
+        <hr class="subsection-divider">
+        <h3>Predicting Pitchfork Album Ratings from Review Text</h3>
+        <h4>Goal</h4>
+        <p>
+            This project provides a start-to-finish example of an NLP transfer learning task, detailing data cleaning, exploratory data analysis, model fitting, and post-fit model prediction analysis.
+        </p>
+        <h4>Summary</h4>
+        <p>
+            In this project, I built a regression model to predict album ratings based on review text body. This was accomplished by building a regressor on top of a pre-trained transformer model and performing task-specific fine-tuning. This sequence of notebooks utilizes a <a href="https://pitchfork.com/" target="_blank">Pitchfork</a> reviews dataset of approximately 20K album reviews (<a href="https://huggingface.co/datasets/mattismegevand/pitchfork" target="_blank">mattismegevand/pitchfork</a>). The project consists of a sequence of jupyter notebooks and a corresponding custom library. The notebooks are available as both the original <code>.ipynb</code> source and <code>.html</code> exports.
+        </p>
+        <div class="flex-container" id="repo">
+            <a href="https://github.com/cjc77/nlp-projects#pitchfork-rating-prediction" target="_blank">
+                <img src="media/pitchfork_rating_distribution.png" class="responsive-image">
+            </a>
+        </div>
+        <h4>Links</h4>
+        <ul>
+            <li><a href="https://github.com/cjc77/nlp-projects#pitchfork-rating-prediction" target="_blank">README (GitHub)</a></li>
+            <li><a href="https://github.com/cjc77/nlp-projects/tree/main/notebooks_pitchfork_ratings" target="_blank">Notebooks (GitHub, .ipynb)</a></li>
+            <li><a href="./notebooks_pitchfork_ratings/01_initial_data_prep.html" target="_blank">Notebooks (.html)</a></li>
+        </ul>
+        <hr class="subsection-divider">
+        <h3>Exploring Pooling in Bayesian Linear Modeling</h3>
+        <p>
+            Coming soon...
+        </p>
+        <hr class="section-divider">
     </section>
 
     <!-- Education Section -->
@@ -168,7 +201,7 @@
             <div class="column">
                 <h3>Statistical Modeling & Data Analysis</h3>
                 <p>
-                    Over 4 years of hands-on data analysis experience in industry and academia, along with formal education in statistics and mathematics (including: mathematical statistics, statistical learning, calculus, differential equations, and other topics). Experience building custom Bayesian models in Stan, performing general statistical analysis and modeling using the R and python statistics/data science ecosystems, and conducting specialized bioinformatics analysis and inference using the Bioconductor ecosystem.
+                    Over 5 years of hands-on data analysis experience in industry and academia, along with formal education in statistics and mathematics (including: mathematical statistics, statistical learning, calculus, differential equations, and other topics). Experience building custom Bayesian models in Stan, performing general statistical analysis and modeling using the R and python statistics/data science ecosystems, and conducting specialized bioinformatics analysis and inference using the Bioconductor ecosystem.
                 </p>
             </div>
         </div>

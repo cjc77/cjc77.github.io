@@ -345,6 +345,10 @@ blockquote {
     content: "View Publication";
 }
 
+.flex-container a#presentation:hover::after {
+    content: "View Presentation";
+}
+
 #headshot {
     border-radius: 50%;  /* Circular crop */
     width: 150px;  /* Set width */
@@ -367,13 +371,6 @@ blockquote {
     padding-left: 20px;
     margin-bottom: 0px;
 }
-
-/* @media (max-width: 500px) {
-    #headshot {
-        width: 110px;
-        height: 110px;
-    }
-} */
 
 @media (max-width: 500px) {
     #headshot {
