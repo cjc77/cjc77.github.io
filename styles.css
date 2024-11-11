@@ -122,21 +122,16 @@
     color: #d1aa00;
 }
 
-.header li:not(:last-child)::after {
+/* .header li:not(:last-child)::after {
     content: "";
     display: block;
     height: 1px;
     background: linear-gradient(to right, transparent, white, transparent);
-    /* width: 300px; */
-    /* margin-left: 20px;
-    margin-right: 20px;
-    width: calc(100% - 40px); */
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    /* width: calc(100vw - 40px); */
     width: calc(70vw);
-}
+} */
 
 .footer {
     padding-top: 20px;
